@@ -1,0 +1,46 @@
+
+//Light Dependent Resistor
+
+int sensePin=0;
+int ledPin=13;
+void setup() {
+ // put your setup code here, to run once:
+analogReference (DEFAULT);
+Serial.begin(9600);
+pinMode(ledPin,OUTPUT);
+}
+void loop() 
+{
+  // put your main code here, to run repeatedly:
+Serial.println (analogRead (sensePin));
+delay(500);
+int val=analogRead(sensePin);
+ if (val<450)
+ digitalWrite(ledPin,HIGH);
+ else
+  digitalWrite(ledPin,LOW);
+
+
+//HEAT SENSOR
+
+int sensePin=0;
+int ledPin=13;
+void setup() {
+ // put your setup code here, to run once:
+analogReference (DEFAULT);
+Serial.begin(9600);
+pinMode(ledPin,OUTPUT);
+}
+void loop() 
+{
+  // put your main code here, to run repeatedly:
+Serial.println (analogRead (sensePin));
+delay(500);
+int val=analogRead(sensePin);
+ if (val>450)
+ digitalWrite(ledPin,HIGH);
+ else
+  digitalWrite(ledPin,LOW);
+
+
+
